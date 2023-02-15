@@ -1,9 +1,11 @@
+/* Adiciona um grid para a lista com 2 colunas, distância entre elas são de 50%, pois há 2 colunas de distãncia, 1 fração.
+Grid não tem margin nem padding*/
 .pokemons {
-    display: grid;
-    grid-template-columns: 1fr;
     margin: 0;
+    list-style-type: none;
     padding: 0;
-    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr; /* celular MUITO pequeno, programa da menor o possivel e vai passando pra maior */
 }
 
 .normal {
@@ -78,18 +80,22 @@
     background-color: #f9aec7;
 }
 
+/* Porém, para dividir melhor os itens, cada item terá margin e padding, separando os externamente, criando
+meio que uma caixa, pinta ela de verde e aumenta a sua altura. Margin não é pintada */
 .pokemon {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* divide span, div em coluna (apply on the parent, effect occur on the child)*/
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    
+    
 }
 
 .pokemon .number {
     color: #000;
     opacity: .3;
-    text-align: right;
+    text-align: end;
     font-size: .625rem;
 }
 
@@ -97,34 +103,41 @@
     text-transform: capitalize;
     color: #fff;
     margin-bottom: .25rem;
+
 }
 
 .pokemon .detail {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* divide os tipos e a img em linha */
     align-items: center;
     justify-content: space-between;
 }
 
+
+/* Da lista pokemons, do item da lista, do elemento img. Definir a largura máxima igual a 100% da width do parent element
+e altura da img de 110px. */
+.pokemon .detail img {
+    max-width: 100%;
+    height: 63px;
+    
+}
+
 .pokemon .detail .types {
-    padding: 0;
     margin: 0;
-    list-style: none;
+    padding: 0;
+    list-style-type: none;
+    filter: brightness(1.11);
+    text-align: center;
+
 }
 
 .pokemon .detail .types .type {
     color: #fff;
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
     margin: .25rem 0;
     font-size: .625rem;
     border-radius: 1rem;
-    filter: brightness(1.1);
-    text-align: center;
-}
-
-.pokemon .detail img {
-    max-width: 100%;
-    height: 70px;
+    
 }
 
 .pagination {
@@ -137,28 +150,31 @@
 }
 
 .pagination button {
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
     margin: .25rem 0;
     font-size: .625rem;
     color: #fff;
     background-color: #6c79db;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 340px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;
+        
     }
 }
 
 @media screen and (min-width: 576px) {
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr;
+        
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) { /* as the screen will be broader, more pokemon per row in the browser
+    screen can be placed so that the grid's width get normal */
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }

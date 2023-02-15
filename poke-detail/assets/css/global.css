@@ -1,0 +1,33 @@
+* {
+    font-family: 'Roboto', 'san-serif';
+    box-sizing: border-box;
+}
+
+.content {
+    width: 100vw; /* content vai ter a largura inteira do browser */
+    height: 100vh;
+}
+
+.upper-detail .skip-buttons {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    justify-content: space-between;
+}
+
+.previous {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff
+}
+
+.next {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff
+}
+
+
+
+

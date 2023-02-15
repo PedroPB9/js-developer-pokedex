@@ -1,24 +1,35 @@
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'san-serif';
     box-sizing: border-box;
 }
 
-body {
+body { /* body == toda a estrutura do browser, (antes da) pokedex etc */
     background-color: #f6f8fc;
 }
 
+/* Toda a section ta com padding de 1 rem, vem depois de body e da uma separação da pokedex e dos outros itens
+da beirada do browser */
 .content {
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; /* content vai ter a largura inteira do browser */
+    height: 100vh; /* altura do browser inteira */
     padding: 1rem;
     background-color: #fff;
+}
+
+@media screen and (min-width: 576px) { /* se passsar de 576 pix, o comprimento maximo do meu content é 576 */
+    .content {
+        max-width: 576px; /* por consequencia width vai travar em 576 */
+        margin: 0 auto;
+        /* Só add essa margin quando passar de 576 */
+    }
 }
 
 @media screen and (min-width: 992px) {
     .content {
         max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
+        height: auto; /* quando w passa 992, a altura fica de acordco com o content */
+        margin: 1rem auto; /* centralização por margem, auto == da mesma margem o quanto for possivel na direita e
+        esquerda. Só add essa margem quando passar de 992 */
         border-radius: 1rem;
     }
 }
